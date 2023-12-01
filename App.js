@@ -28,7 +28,6 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-    // Remove the account change listener when the component is unmounted
     if (window.ethereum) {
       window.ethereum.removeListener("accountsChanged", this.handleAccountsChanged);
     }
@@ -188,7 +187,6 @@ class App extends React.Component {
     return (
       <div className='App'>
         <h2>Ticket Sale Contract</h2>
-        This is run by {this.state.manager}
         {this.renderAvailableTickets()}
         {this.renderOwnerTickets()}
 
