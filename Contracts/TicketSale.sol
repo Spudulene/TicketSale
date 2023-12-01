@@ -27,7 +27,8 @@ contract TicketSale {
     function buyTicket(uint ticketId) public payable returns (bool, bytes memory) {
         bool success;
         bytes memory data;
-        
+
+        require(msg.sender != manager, "Owner cannot purchase tickets.");
         require(ticketOwners[msg.sender] == 0, "You already own a ticket.");
         require(ticketId < numTickets, "Invalid ticket ID.");
         require(!tickets[ticketId].isSold, "Ticket is already sold.");
