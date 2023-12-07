@@ -187,6 +187,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <h2>Ticket Sale Contract</h2>
+        {"Price of Tickets: " + this.state.price + " wei"}
         {this.renderAvailableTickets()}
         {this.renderOwnerTickets()}
 
